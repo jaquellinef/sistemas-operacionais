@@ -1,56 +1,80 @@
-# Aula 01 - Apresentação da Disciplina e Introdução aos Sistemas Operacionais
+# 🎓 Aula 01 - Apresentação da Disciplina e Introdução aos Sistemas Operacionais
 
-## Visão Geral
-A aula apresentou a disciplina, os conteúdos do semestre, a metodologia, os critérios de avaliação e a primeira atividade. Também introduziu os principais conceitos de Sistemas Operacionais, como kernel, escalonamento de processos, memória, arquivos, segurança e virtualização.
+👨‍🏫 **Professor:** Prof. Me. Deivison S. Takatu  
+📧 **E-mail:** deivison.takatu@fatec.sp.gov.br  
 
-## O que são Sistemas Operacionais?
-Sistemas operacionais são softwares essenciais que gerenciam os recursos de hardware e software, funcionando como interface entre o usuário e a máquina.
+---
 
-**Exemplos:** Windows, macOS, Linux, Android e iOS.
+## 👥 Apresentação da Turma
+- 💼 Experiências profissionais na área  
+- 🎯 Expectativas após a conclusão do curso  
+- 🎨 Um hobby ou passatempo  
 
-## Conceitos Principais
-### Kernel
-É o núcleo do sistema operacional, com acesso direto ao hardware e responsabilidade sobre o gerenciamento dos recursos vitais.
+---
 
-### Escalonamento de Processos
-Define qual processo será executado, em que momento e por quanto tempo.
-- FIFO
-- Round Robin
-- Prioridade
+## 📑 Sumário
+1️⃣ Apresentação da Disciplina e Contextualização  
+2️⃣ Plano de Aulas e Ensino  
+3️⃣ Contexto da Disciplina  
+4️⃣ Sequência dos Conteúdos do Semestre  
+5️⃣ Metodologia de Ensino  
+6️⃣ Critérios de Avaliação  
+7️⃣ Atividade  
+8️⃣ Conclusão  
 
-### Gerenciamento de Memória
-Inclui:
-- memória principal
-- alocação dinâmica
-- proteção de memória
-- memória virtual
-- paginação
-- segmentação
+---
 
-### Gerenciamento de Recursos
-O sistema operacional também cuida de:
-- dispositivos de entrada e saída
-- sistemas de arquivos
-- segurança
-- virtualização
+## 🎓 Histórico Acadêmico e Profissional
 
-## Critérios de Avaliação
-Nota final:
+| Formação | Ano |
+|----------|-----|
+| Mestre em Ciência da Computação | 2021 |
+| Especialização em Inteligência Artificial | Atual |
+| 4 Pós-graduações Lato sensu | - |
+| Graduação em ADS | 2016 |
 
-(P1 * 0.25) + (P2 * 0.25) + ((PJ + AT) * 0.25)
+| Experiência Profissional | Período |
+|--------------------------|---------|
+| Gerente de Projetos | 2023 - Atual |
+| Professor Universitário | 2022 - Atual |
+| Coordenador Acadêmico | 2019 - 2021 |
+| Professor de Informática | 2017 - 2023 |
 
-- P1: Prova 1
-- P2: Prova 2
-- PJ: Projeto
-- AT: Atividades
+---
 
-## Atividade
-1. Formar grupos de 3 a 5 integrantes.
-2. Enviar os nomes completos dos participantes.
-3. Criar um repositório no GitHub.
-4. Elaborar um resumo da Aula 01 em Markdown.
-5. Criar uma linha do tempo em mapa mental no Miro.
-6. Salvar o conteúdo final no repositório.
+## 🏫 Atuação na FATEC
+- 💻 Orientações: Programação Web  
+- 📊 Projetos: Programação Web e Educação Financeira  
 
-## Conclusão
-A aula inicial apresentou a estrutura da disciplina e os fundamentos dos sistemas operacionais, preparando os alunos para as atividades práticas e para o desenvolvimento de um portfólio ao longo do semestre.
+---
+
+## 💻 O Que São Sistemas Operacionais?
+- 📌 **Definição:** Software essencial que gerencia hardware e software  
+- 🔑 **Importância:** Interface entre usuário e máquina  
+- 🖥️ **Exemplos:** Windows, macOS, Linux, Android, iOS  
+
+---
+
+## ⚙️ Estrutura Interna: Fluxograma do Kernel
+
+```mermaid
+flowchart TD
+    A[Usuário] --> B[Modo Usuário]
+    B --> C[Chamadas de Sistema]
+    C --> D[Kernel]
+    D --> E[Gerenciamento de Processos]
+    D --> F[Gerenciamento de Memória]
+    D --> G[Gerenciamento de Dispositivos]
+    E --> H[Hardware]
+    F --> H
+    G --> H
+flowchart LR
+    A[Processos na Fila] --> B[FIFO]
+    A --> C[Round Robin]
+    A --> D[Prioridade]
+    B --> E[Execução]
+    C --> E
+    D --> E
+    E --> F[Resultado: Eficiência e Justiça]
+
+---
