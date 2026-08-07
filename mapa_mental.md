@@ -12,12 +12,12 @@ mindmap
       Hobbies
     📚 Formação
       Mestrado
-      Especialização IA
-      Graduação ADS
+      IA
+      ADS
     💼 Carreira
-      Gerente de Projetos
-      Professor Universitário
-      Coordenador Acadêmico
+      Gerente
+      Professor
+      Coordenador
     🏫 FATEC
       Orientações Web
       Projetos Financeiros
