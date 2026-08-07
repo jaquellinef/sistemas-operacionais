@@ -75,7 +75,6 @@
 | Prioridade    | Executa por prioridade; envelhecimento evita inanição | Sistemas com níveis de serviço |
 
 ### Fluxograma de Escalonamento
-
 ```mermaid
 flowchart LR
   P[Processos prontos] -->|FIFO| F[FIFO Queue]
