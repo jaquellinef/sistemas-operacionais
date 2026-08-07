@@ -80,14 +80,11 @@ flowchart TD
 ###⏱️ Escalonamento de Processos
 
 ```mermaid
-flowchart LR
-  P[📋 Processos prontos] -->|FIFO| F[FIFO Queue]
-  P -->|Round Robin| R[Round Robin Queue]
-  P -->|Prioridade| Pr[Priority Queue]
-  F --> Exec[▶️ Execução]
-  R --> Exec
-  Pr --> Exec
-  Exec --> Resultado[✅ Saída / ⏳ Espera / 🔄 I/O]
+graph LR
+    A[FIFO] -->|Execução sequencial| B[Processos]
+    C[Round Robin] -->|Tempo fixo| B
+    D[Prioridade] -->|Critérios definidos| B
+
 ---
 ## 🧠Gerenciamento de Memória — Real e Virtual
 
