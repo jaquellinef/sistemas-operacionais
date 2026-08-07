@@ -65,17 +65,6 @@
 
 ### Fluxograma do Kernel
 
-```mermaid
-flowchart TD
-    A[Usuário] --> B[Modo Usuário]
-    B --> C[Chamadas de Sistema]
-    C --> D[Kernel]
-    D --> E[Gerenciamento de Processos]
-    D --> F[Gerenciamento de Memória]
-    D --> G[Gerenciamento de Dispositivos]
-    E --> H[Hardware]
-    F --> H
-    G --> H
 
 ###⏱️ Escalonamento de Processos
 ```mermaid
