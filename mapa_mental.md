@@ -66,7 +66,7 @@ flowchart TD
     M --> M6[Histórico de commits]
 
     A --> N[Critérios de Avaliação]
-    N --> N1[Fórmula: P1*0.25 + P2*0.25 + (PJ+AT)*0.25]
+    N --> N1[Fórmula: P1*0.25 + P2*0.25 + PJ+AT*0.25]
     N --> N2[Componentes: P1, P2, PJ, AT]
     N --> N3[Rubrica: funcionalidade, documentação, código, apresentação]
 
