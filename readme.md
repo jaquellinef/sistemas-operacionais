@@ -55,7 +55,15 @@
 
 ---
 
-## ⚙️ Estrutura Interna: Fluxograma do Kernel
+## ⚙️ Estrutura Interna: Camadas e Modelos
+- 🧩 **Estrutura em Camadas:** Organização hierárquica para modularidade  
+- 🏗️ **Monolítica vs. Modular:** Diferentes abordagens de design de kernel  
+- 🔧 **Kernel:** Núcleo do SO, acesso direto ao hardware, gerenciamento de recursos vitais  
+- 🔒 **Modos de Operação:**  
+  - 👤 Modo Usuário: Programas comuns  
+  - 🛡️ Modo Kernel: Privilégios elevados, acesso total  
+
+### Fluxograma do Kernel
 
 ```mermaid
 flowchart TD
@@ -68,13 +76,3 @@ flowchart TD
     E --> H[Hardware]
     F --> H
     G --> H
-flowchart LR
-    A[Processos na Fila] --> B[FIFO]
-    A --> C[Round Robin]
-    A --> D[Prioridade]
-    B --> E[Execução]
-    C --> E
-    D --> E
-    E --> F[Resultado: Eficiência e Justiça]
-
----
