@@ -57,11 +57,4 @@ mindmap
       Mapa[Miro exportado]
       Projeto[Entregas parciais e finais]
 
-%% Estilos pastel
-classDef prof fill=#FFD1DC,stroke=#333,stroke-width=1px;
-classDef apres fill=#FFECB3,stroke=#333,stroke-width=1px;
-classDef hist fill=#C5E1A5,stroke=#333,stroke-width=1px;
-classDef exp fill=#B3E5FC,stroke=#333,stroke-width=1px;
-classDef fatec fill=#D1C4E9,stroke=#333,stroke-width=1px;
-classDef so fill=#FFE0B2,stroke=#333,stroke-width=1px;
-classDef estrut fill=#F8BBD0,stroke=#333,stroke-width
+
