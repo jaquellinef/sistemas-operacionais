@@ -1,4 +1,5 @@
-mindmap
+'''mermaid
+
   root((Aula 01 — Sistemas Operacionais))
     Apresentação
       Professor[Prof. Me. Deivison S. Takatu 📧 deivison.takatu@fatec.sp.gov.br]
