@@ -77,6 +77,7 @@ flowchart TD
     F --> H
     G --> H
 
+###⏱️ Escalonamento de Processos
 ```mermaid
 flowchart LR
   P[📋 Processos prontos] -->|FIFO| F[FIFO Queue]
