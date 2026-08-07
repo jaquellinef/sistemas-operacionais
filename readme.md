@@ -63,18 +63,6 @@
   - 👤 Modo Usuário: Programas comuns  
   - 🛡️ Modo Kernel: Privilégios elevados, acesso total  
 
-```mermaid
-flowchart TD
-  A[Aplicação / Usuário] --> B[Modo Usuário]
-  B --> C[Chamadas de Sistema]
-  C --> D[Kernel]
-  D --> E[Gerenciamento de Processos]
-  D --> F[Gerenciamento de Memória]
-  D --> G[Gerenciamento de Dispositivos]
-  E --> H[Hardware / CPU]
-  F --> H
-  G --> H
-
 ---
 ## ⏱️ Escalonamento de Processos
 **Objetivo:** decidir qual processo executar e por quanto tempo para otimizar eficiência, justiça e tempo de resposta.
