@@ -77,27 +77,127 @@ flowchart TD
     F --> H
     G --> H
 ---
-###⏱️ Escalonamento de Processos
+## ⏱️ Escalonamento de Processos
+**Objetivo:** decidir qual processo executar e por quanto tempo para otimizar eficiência, justiça e tempo de resposta.
+
+| **Algoritmo** | **Resumo** | **Uso típico** |
+|---------------|------------|----------------|
+| FIFO          | Primeiro a entrar, primeiro a sair | Batch |
+| Round Robin   | Fatias de tempo (quantum)          | Interativo |
+| Prioridade    | Executa por prioridade; envelhecimento evita inanição | Sistemas com níveis de serviço |
+
+### Fluxograma de Escalonamento
 
 ```mermaid
-graph LR
-    A[FIFO] -->|Execução sequencial| B[Processos]
-    C[Round Robin] -->|Tempo fixo| B
-    D[Prioridade] -->|Critérios definidos| B
+flowchart LR
+  P[Processos prontos] -->|FIFO| F[FIFO Queue]
+  P -->|Round Robin| R[Round Robin Queue]
+  P -->|Prioridade| Pr[Priority Queue]
+  F --> Exec[Execução]
+  R --> Exec
+  Pr --> Exec
+  Exec --> Resultado[Saída / Espera / I/O]
 
 ---
-## 🧠Gerenciamento de Memória — Real e Virtual
 
-```mermaid
+## 🧠 Gerenciamento de Memória — Real e Virtual
 
-flowchart TD
-  Proc[Processo solicita memória] --> MM[Gerenciador de Memória]
-  MM -->|Espaço livre| Aloca[Aloca em RAM]
-  MM -->|Sem espaço| Swap[Move páginas para Swap]
-  Swap --> Aloca
-  Aloca --> Exec[Processo em execução]
-  Exec -->|Acesso| TLB[TLB consulta]
-  TLB -->|Hit| MemFís[Endereço físico]
-  TLB -->|Miss| PageTable[Consulta tabela de páginas] --> MemFís
+### Memória Principal
+- Alocação dinâmica  
+- Proteção entre processos  
+- Compartilhamento controlado quando necessário  
+
+### Memória Virtual
+- Paginação e segmentação  
+- TLB (Translation Lookaside Buffer)  
+- Swap / Pagefile  
+
+**Resumo:**  
+A memória virtual permite endereçamento lógico maior que a RAM física, melhora o isolamento entre processos e possibilita execução de programas maiores. Porém, pode causar overhead quando há muito swapping.
+
+
+## 🔌 Dispositivos, Sistemas de Arquivos e Futuro
+
+### Gerenciamento de E/S
+- Abstração de dispositivos via drivers  
+- Tratamento de interrupções  
+- Buffering  
+- Filas de E/S  
+- DMA (Direct Memory Access)  
+
+### Sistemas de Arquivos
+| **Sistema** | **Pontos fortes** | **Uso típico** |
+|-------------|-------------------|----------------|
+| ext4        | Estável, journaling | Linux |
+| NTFS        | Permissões avançadas, compressão | Windows |
+| FAT32/exFAT | Compatibilidade entre diferentes SOs | Dispositivos removíveis |
+| XFS/ZFS     | Escalabilidade, integridade | Storage corporativo |
+
+## 🔒 Segurança e Virtualização
+
+### Segurança
+- Autenticação  
+- Autorização  
+- Controle de acesso  
+- Criptografia  
+- Atualizações e hardening  
+
+### Virtualização
+- Hipervisores (tipo 1 e tipo 2)  
+- Containers (ex.: Docker)  
+- Orquestração (ex.: Kubernetes)  
+
+### Tendências Futuras
+- NFV (Network Function Virtualization)  
+- Serverless na borda  
+- Isolamento por hardware (SGX, TrustZone)  
+- Sistemas Operacionais otimizados para IoT e edge computing  
+
+## 💡 Dica importante — Portfólio de Projetos
+**Por que:** demonstra habilidades práticas, criatividade e domínio de ferramentas; facilita avaliação e oportunidades profissionais.  
+
+**O que incluir:**
+- README claro e objetivo  
+- Instruções de execução  
+- Código organizado  
+- Documentação técnica  
+- Licença  
+- Histórico de commits  
+
+---
+
+## 📊 Critérios de Avaliação
+
+**Fórmula da nota final**
+
+
+
+\[
+\textbf{Nota Final} = (P1 \cdot 0.25) + (P2 \cdot 0.25) + ((PJ + AT) \cdot 0.25)
+\]
+
+
+
+**Componentes**
+- **P1 — Prova 1:** 25%  
+- **P2 — Prova 2:** 25%  
+- **PJ — Projeto:** 25%  
+- **AT — Atividades:** 25%  
+
+**Rubrica sugerida para Projeto (PJ)**
+- Funcionalidade: 40%  
+- Documentação: 20%  
+- Qualidade do Código: 20%  
+- Apresentação: 20%  
+
+---
+
+## 📝 Atividades e Entregas
+- **Formação de grupos** — criar `grupo.md` com nomes completos, RA/matrícula e e‑mail.  
+- **Repositório GitHub** — incluir `README.md` e `Aula01.md`.  
+- **Mapa mental (Miro)** — linha do tempo dos SOs; exportar para `.md` ou imagem; salvar no repositório.  
+- **Projeto (PJ)** — entregas parciais e entrega final com documentação e demonstração.  
+
+
 
 
