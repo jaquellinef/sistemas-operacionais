@@ -157,12 +157,9 @@ A memória virtual permite endereçamento lógico maior que a RAM física, melho
 
 **Fórmula da nota final**
 
-
-
 \[
-\textbf{Nota Final} = (P1 \cdot 0.25) + (P2 \cdot 0.25) + ((PJ + AT) \cdot 0.25)
+\textbf{Nota Final} = (P1 \times 0.25) + (P2 \times 0.25) + ((PJ + AT) \times 0.25)
 \]
-
 
 
 **Componentes**
