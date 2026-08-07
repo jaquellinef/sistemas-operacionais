@@ -3,6 +3,7 @@
 ```mermaid
 flowchart TD
     A[Aula 01 — Sistemas Operacionais]
+
     A --> B[Professor]
     B --> B1[Prof. Me. Deivison S. Takatu]
     B --> B2[E-mail: deivison.takatu@fatec.sp.gov.br]
@@ -13,16 +14,16 @@ flowchart TD
     C --> C3[Hobby ou passatempo]
 
     A --> D[Histórico Acadêmico]
-    D --> D1[Mestre em Ciência da Computação (2021)]
-    D --> D2[Especialização em IA (Atual)]
-    D --> D3[Graduação em ADS (2016)]
+    D --> D1[Mestre em Ciência da Computação - 2021]
+    D --> D2[Especialização em IA - Atual]
+    D --> D3[Graduação em ADS - 2016]
     D --> D4[4 Pós-graduações Lato sensu]
 
     A --> E[Experiência Profissional]
-    E --> E1[Gerente de Projetos (2023 - Atual)]
-    E --> E2[Professor Universitário (2022 - Atual)]
-    E --> E3[Coordenador Acadêmico (2019 - 2021)]
-    E --> E4[Professor de Informática (2017 - 2023)]
+    E --> E1[Gerente de Projetos - 2023 a Atual]
+    E --> E2[Professor Universitário - 2022 a Atual]
+    E --> E3[Coordenador Acadêmico - 2019 a 2021]
+    E --> E4[Professor de Informática - 2017 a 2023]
 
     A --> F[Atuação na FATEC]
     F --> F1[Orientações: Programação Web]
@@ -39,9 +40,9 @@ flowchart TD
     H --> H3[Modos: usuário vs kernel]
 
     A --> I[Escalonamento de Processos]
-    I --> I1[FIFO — batch]
-    I --> I2[Round Robin — interativo]
-    I --> I3[Prioridade — níveis de serviço]
+    I --> I1[FIFO - batch]
+    I --> I2[Round Robin - interativo]
+    I --> I3[Prioridade - níveis de serviço]
 
     A --> J[Gerenciamento de Memória]
     J --> J1[Memória principal: alocação, proteção, compartilhamento]
@@ -49,7 +50,7 @@ flowchart TD
 
     A --> K[Dispositivos e Arquivos]
     K --> K1[E/S: drivers, interrupções, buffering, DMA]
-    K --> K2[Sistemas de arquivos: ext4, NTFS, FAT32/exFAT, XFS/ZFS]
+    K --> K2[Sistemas de arquivos: ext4, NTFS, FAT32, XFS/ZFS]
 
     A --> L[Segurança e Virtualização]
     L --> L1[Segurança: autenticação, autorização, criptografia, hardening]
@@ -72,5 +73,5 @@ flowchart TD
     A --> O[Atividades e Entregas]
     O --> O1[Grupo: grupo.md]
     O --> O2[Repositório: README.md e Aula01.md]
-    O --> O3[Mapa mental (Miro) exportado]
+    O --> O3[Mapa mental exportado]
     O --> O4[Projeto: entregas parciais e finais]
