@@ -1,4 +1,5 @@
-mindmap
+```mermaid
+flowchart TD
   root((Aula 01 — Sistemas Operacionais))
     Apresentação
       Professor[Prof. Me. Deivison S. Takatu 📧]
