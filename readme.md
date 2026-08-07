@@ -78,8 +78,8 @@ flowchart TD
     G --> H
 ---
 ###⏱️ Escalonamento de Processos
-```mermaid
 
+```mermaid
 flowchart LR
   P[📋 Processos prontos] -->|FIFO| F[FIFO Queue]
   P -->|Round Robin| R[Round Robin Queue]
