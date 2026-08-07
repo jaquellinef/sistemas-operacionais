@@ -63,11 +63,23 @@
   - 👤 Modo Usuário: Programas comuns  
   - 🛡️ Modo Kernel: Privilégios elevados, acesso total  
 
-### Fluxograma do Kernel
-
-
+---
+## Fluxograma do Kernel
+```mermaid
+flowchart TD
+    A[Usuário] --> B[Modo Usuário]
+    B --> C[Chamadas de Sistema]
+    C --> D[Kernel]
+    D --> E[Gerenciamento de Processos]
+    D --> F[Gerenciamento de Memória]
+    D --> G[Gerenciamento de Dispositivos]
+    E --> H[Hardware]
+    F --> H
+    G --> H
+---
 ###⏱️ Escalonamento de Processos
 ```mermaid
+
 flowchart LR
   P[📋 Processos prontos] -->|FIFO| F[FIFO Queue]
   P -->|Round Robin| R[Round Robin Queue]
@@ -76,9 +88,11 @@ flowchart LR
   R --> Exec
   Pr --> Exec
   Exec --> Resultado[✅ Saída / ⏳ Espera / 🔄 I/O]
-
+---
 ## 🧠Gerenciamento de Memória — Real e Virtual
+
 ```mermaid
+
 flowchart TD
   Proc[Processo solicita memória] --> MM[Gerenciador de Memória]
   MM -->|Espaço livre| Aloca[Aloca em RAM]
