@@ -84,8 +84,6 @@ flowchart LR
   R --> Exec
   Pr --> Exec
   Exec --> Resultado[Saída / Espera / I/O]
-
-
 ---
 
 ## 🧠 Gerenciamento de Memória — Real e Virtual
