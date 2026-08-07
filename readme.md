@@ -76,3 +76,27 @@ flowchart TD
     E --> H[Hardware]
     F --> H
     G --> H
+
+```mermaid
+flowchart LR
+  P[📋 Processos prontos] -->|FIFO| F[FIFO Queue]
+  P -->|Round Robin| R[Round Robin Queue]
+  P -->|Prioridade| Pr[Priority Queue]
+  F --> Exec[▶️ Execução]
+  R --> Exec
+  Pr --> Exec
+  Exec --> Resultado[✅ Saída / ⏳ Espera / 🔄 I/O]
+
+## 🧠Gerenciamento de Memória — Real e Virtual
+```mermaid
+flowchart TD
+  Proc[Processo solicita memória] --> MM[Gerenciador de Memória]
+  MM -->|Espaço livre| Aloca[Aloca em RAM]
+  MM -->|Sem espaço| Swap[Move páginas para Swap]
+  Swap --> Aloca
+  Aloca --> Exec[Processo em execução]
+  Exec -->|Acesso| TLB[TLB consulta]
+  TLB -->|Hit| MemFís[Endereço físico]
+  TLB -->|Miss| PageTable[Consulta tabela de páginas] --> MemFís
+
+
