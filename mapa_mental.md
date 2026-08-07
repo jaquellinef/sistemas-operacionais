@@ -1,20 +1,4 @@
-mindmap
-  root((Aula 01 - Sistemas Operacionais))
-    Apresentacao da Disciplina
-      Plano de ensino
-      Metodologia
-      Avaliacao
-      Atividade inicial
-    Sistemas Operacionais
-      Definicao
-      Importancia
-      Exemplos
-        Windows
-        macOS
-        Linux
-        Android
-        iOS
-    Estrutura Interna
+
       Kernel
       Camadas
       Modo usuario
@@ -42,3 +26,18 @@ mindmap
       GitHub
       Markdown
       Miro
+🖥️ Sistemas Operacionais
+   ├── 1969: Unix
+   │     └── Base para diversos SO modernos
+   ├── 1981: MS-DOS
+   │     └── Primeira grande aposta da Microsoft
+   ├── 1985: Windows 1.0
+   │     └── Interface gráfica inicial
+   ├── 1991: Linux
+   │     └── Código aberto, comunidade global
+   ├── 2001: macOS (OS X)
+   │     └── Evolução do Mac OS clássico
+   ├── 2007: iOS
+   │     └── Revolução mobile com iPhone
+   └── 2008: Android
+         └── Sistema aberto para smartphones
