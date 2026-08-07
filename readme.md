@@ -64,6 +64,7 @@
   - 🛡️ Modo Kernel: Privilégios elevados, acesso total  
 
 ---
+
 ## ⏱️ Escalonamento de Processos
 **Objetivo:** decidir qual processo executar e por quanto tempo para otimizar eficiência, justiça e tempo de resposta.
 
