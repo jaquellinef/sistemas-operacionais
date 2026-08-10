@@ -514,11 +514,6 @@ flowchart LR
 
 ---
 
-# 🃏 11. Flashcards
-
-<details>
-<summary>🔥 Qual tecnologia marcou a 1ª geração?</summary>
-
 **Válvulas eletrônicas.**
 
 📅 1945–1955
@@ -566,77 +561,7 @@ Aumentar a utilização da CPU.
 
 ---
 
-# 📝 12. Quiz rápido
-
-### ❓ 1. Qual é a sequência correta?
-
-```text
-A) ⚡ → 🔥 → 🔬
-B) 🔬 → ⚡ → 🔥
-C) 🔥 → ⚡ → 🔬
-D) 🔥 → 🔬 → ⚡
-```
-
-<details>
-<summary>✅ Resposta</summary>
-
-**C) 🔥 → ⚡ → 🔬**
-
-Válvulas → Transistores → Circuitos Integrados.
-
-</details>
-
----
-
-### ❓ 2. O que surgiu na segunda geração para organizar melhor os trabalhos?
-
-<details>
-<summary>✅ Resposta</summary>
-
-📦 **Sistemas em lote (Batch Processing).**
-
-</details>
-
----
-
-### ❓ 3. Por que a multiprogramação melhora a utilização da CPU?
-
-<details>
-<summary>✅ Resposta</summary>
-
-Porque quando um programa está esperando uma operação de I/O, outro programa pode utilizar a CPU.
-
-</details>
-
----
-
-### ❓ 4. Complete:
-
-```text
-🔥 Válvulas       → ?
-⚡ Transistores   → ?
-🔬 Circuitos IC   → ?
-```
-
-<details>
-<summary>✅ Resposta</summary>
-
-```text
-🔥 Válvulas
-→ 👨‍💻 Programação direta
-
-⚡ Transistores
-→ 📦 Batch
-
-🔬 Circuitos Integrados
-→ 🧠 Multiprogramação
-```
-
-</details>
-
----
-
-# 🏁 13. Resumo final
+# 🏁 11. Resumo final
 
 A história dos Sistemas Operacionais acompanha a evolução do hardware.
 
