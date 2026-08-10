@@ -1,5 +1,3 @@
-Claro. Vou voltar ao **primeiro estilo**: mais didático, com emojis, blocos de código, tabelas e explicações curtas — mas vou substituir os diagramas ASCII por **Mermaid**, que fica muito melhor renderizado no GitHub.
-
 # 🕰️ História dos Sistemas Operacionais
 
 > 📚 **Sistemas Operacionais Modernos — Andrew S. Tanenbaum & Herbert Bos, 4ª edição**
