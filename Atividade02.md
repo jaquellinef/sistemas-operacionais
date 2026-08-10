@@ -1,5 +1,3 @@
-Claro. Abaixo está uma versão **somente da parte “História dos Sistemas Operacionais”**, otimizada para colocar diretamente em um `README.md` ou arquivo `.md` no GitHub.
-
 # 🕰️ História dos Sistemas Operacionais
 
 > 📚 **Tanenbaum — Sistemas Operacionais Modernos, 4ª edição**
