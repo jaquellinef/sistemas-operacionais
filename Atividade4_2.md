@@ -1,7 +1,7 @@
 # Atividade 4.2 – Sistemas Operacionais Baseados em Outros
 
 ## 🎯 Objetivo
-Pesquisar e identificar sistemas operacionais que foram desenvolvidos a partir de outro sistema, destacando diferenças, componentes herdados e modificados.
+Pesquisar e identificar cinco sistemas operacionais que foram desenvolvidos a partir de outro sistema, mostrando diferenças, componentes herdados e modificados.
 
 ---
 
@@ -27,7 +27,7 @@ Pesquisar e identificar sistemas operacionais que foram desenvolvidos a partir d
 ---
 
 ## ✔️ Conclusão
-A maioria dos sistemas operacionais modernos não é criada do zero, mas sim adaptada de sistemas já existentes. Isso garante:
+A maioria dos sistemas operacionais modernos não é criada do zero, mas adaptada de sistemas existentes, o que garante:
 - **Redução de custos** de desenvolvimento.  
 - **Maior estabilidade e segurança**.  
 - **Reutilização de tecnologias** já testadas.  
