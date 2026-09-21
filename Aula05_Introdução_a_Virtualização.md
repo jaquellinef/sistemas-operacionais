@@ -140,18 +140,6 @@ O **Tiny Core Linux** é uma distribuição Linux ultraleve, ideal para entender
 * **Duração:** 10 a 15 minutos por grupo
 * **Requisito:** Participação de todos os integrantes (Trazer notebook pessoal, se possível).
 
-### 👥 Divisão de Horários e Distribuições
-
-#### ⏰ Bloco 1: 09h30 às 11h10
-* **Grupo A (Kali Linux):** Jaquelline, Juliana, Maria E.
-* **Grupo B (Lubuntu):** Ana Clara, Ana Laura, Giovana, Evelyn.
-* **Grupo C (Ubuntu):** Alan, Bernardo F., João Pedro, Reinaldo.
-
-#### ⏰ Bloco 2: 11h20 às 13h00
-* **Grupo D (Zorin OS):** Bernardo C., Kauã, Kayky, Vinicius.
-* **Grupo E (Linux Mint):** Enzo, Gabriel, Karl, Matheus T.
-* **Grupo F (Fedora):** Adrian, Gustavo, Igor, Matheus A.
-
 ---
 
 ## 8. Atividade Prática 📝
