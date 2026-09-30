@@ -180,7 +180,7 @@ Abaixo está a comparação detalhada coletada diretamente da execução nos doi
 
 | Métrica do Sistema | Execução Local (Máquina Física) | Execução na Nuvem (Render / Cloud) |
 | :--- | :--- | :--- |
-| **Hostname** | `Jaquellina` | `srv-daug2ogjo0nc7389gi1g-hibernate-66b759d4f-dnwdj` |
+| **Hostname** | `Jaquelline` | `srv-daug2ogjo0nc7389gi1g-hibernate-66b759d4f-dnwdj` |
 | **Plataforma (SO)** | `win32` (Windows) | `linux` (Linux Server) |
 | **Arquitetura** | `x64` | `x64` |
 | **Núcleos de CPU** | `12 x 12th Gen Intel(R) Core(TM) i5-1235U` | `8 x AMD EPYC 7R13 Processor` |
