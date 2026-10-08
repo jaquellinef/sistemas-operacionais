@@ -57,7 +57,7 @@ Na primeira captura de análise, verificam-se os seguintes parâmetros:
 - **Uso de RAM:** 18.79 GB / 30.65 GB (61.3%)
 - **Tempo Ligado (Uptime):** 4 dias, 2 horas, 14 minutos
 
-![Dashboard de Monitoramento no Render - Visão 1](Captura%20de%20tela%202026-10-06_render.png)
+![Dashboard de Monitoramento no Render - Visão 1](Captura%20de%20tela%202026-10-06%20render.png)
 
 #### Painel de Status - Sessão 2
 Em uma análise posterior de estresse/monitoramento contínuo:
