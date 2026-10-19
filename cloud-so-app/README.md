@@ -1,198 +1,272 @@
-# 💻 cloud-so-app — Painel de Monitoramento do Sistema Operacional
+<div align="center">
 
-[![Node.js](https://img.shields.io/badge/Node.js-v24.x-339933?style=flat-square&logo=node.js)](https://nodejs.org/)
-[![Express.js](https://img.shields.io/badge/Express.js-v4.x-000000?style=flat-square&logo=express)](https://expressjs.com/)
-[![Render](https://img.shields.io/badge/Deploy-Render-46E3B7?style=flat-square&logo=render)](https://cloud-so-app-jaque.onrender.com)
-[![Railway](https://img.shields.io/badge/Deploy-Railway-0B0D0E?style=flat-square&logo=railway)](https://sistemas-operacionais-production.up.railway.app)
+# 💻 `cloud-so-app`
 
-**Aplicação:** `cloud-so-app`  
-**Autora:** Jaquelline ([@jaquellinef](https://github.com/jaquellinef))  
-**Repositório:** [github.com/jaquellinef/cloud-so-app](https://github.com/jaquellinef/cloud-so-app)  
-**Ambiente Cloud (Render):** [cloud-so-app-jaque.onrender.com](https://cloud-so-app-jaque.onrender.com)  
-**Ambiente Cloud (Railway):** [sistemas-operacionais-production.up.railway.app](https://sistemas-operacionais-production.up.railway.app)  
+### 🚀 Painel de Monitoramento do Sistema Operacional & Hardware em Nuvem
+
+[![Node.js](https://img.shields.io/badge/Node.js-v24.x_LTS-339933?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org/)
+[![Express.js](https://img.shields.io/badge/Express.js-v4.x-000000?style=for-the-badge&logo=express&logoColor=white)](https://expressjs.com/)
+[![Render](https://img.shields.io/badge/Render-Online-46E3B7?style=for-the-badge&logo=render&logoColor=white)](https://cloud-so-app-jaque.onrender.com)
+[![Railway](https://img.shields.io/badge/Railway-Online-0B0D0E?style=for-the-badge&logo=railway&logoColor=white)](https://sistemas-operacionais-production.up.railway.app)
+[![License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)](#)
+
+<p align="center">
+  <b>Aplicação Web para coleta, análise e monitoramento de métricas em tempo real do Sistema Operacional e Hardware.</b><br/>
+  Estudo prático comparativo entre execução em máquina física local (Windows) e contêineres virtualizados na nuvem (Linux / PaaS).
+</p>
+
+[🌐 Acessar no Render](https://cloud-so-app-jaque.onrender.com) • [🚂 Acessar no Railway](https://sistemas-operacionais-production.up.railway.app) • [📖 Ver Manual Interno](./MANUAL.md)
 
 ---
+
+</div>
 
 ## 📋 Sumário
 
-- [1. Sobre o Projeto](#1-sobre-o-projeto)
-- [2. Funcionalidades](#2-funcionalidades)
-- [3. Tecnologias Utilizadas](#3-tecnologias-utilizadas)
-- [4. Estrutura do Projeto](#4-estrutura-do-projeto)
-- [5. Como Executar Localmente](#5-como-executar-localmente)
-- [6. Implantação e Hospedagem na Nuvem (PaaS)](#6-implantação-e-hospedagem-na-nuvem-paas)
-  - [6.1. Render](#61-render)
-  - [6.2. Railway](#62-railway)
-- [7. Análise Comparativa de Ambientes](#7-análise-comparativa-de-ambientes)
-- [8. Conceitos de Sistemas Operacionais Aplicados](#8-conceitos-de-sistemas-operacionais-aplicados)
-- [9. Solução de Problemas Enfrentados](#9-solução-de-problemas-enfrentados)
-- [10. Autora](#10-autora)
+- [1. 🎯 Sobre o Projeto](#1--sobre-o-projeto)
+- [2. ✨ Funcionalidades Principais](#2--funcionalidades-principais)
+- [3. 🛠️ Tecnologias & Módulos Nativos](#3️-tecnologias--módulos-nativos)
+- [4. 🏗️ Arquitetura & Fluxo de Chamadas (System Calls)](#4️-arquitetura--fluxo-de-chamadas-system-calls)
+- [5. 📂 Estrutura de Arquivos](#5--estrutura-de-arquivos)
+- [6. 🚀 Como Executar Localmente](#6--como-executar-localmente)
+- [7. ☁️ Implantação nas Plataformas PaaS](#7️-implantação-nas-plataformas-paas)
+- [8. 📊 Análise Comparativa dos Ambientes](#8--análise-comparativa-dos-ambientes)
+- [9. 🎓 Conceitos Teóricos de Sistemas Operacionais](#9--conceitos-teóricos-de-sistemas-operacionais)
+- [10. 🔧 Solução de Problemas & Troubleshooting](#10--solução-de-problemas--troubleshooting)
+- [11. 👩‍💻 Autora](#11--autora)
 
 ---
 
-## 1. Sobre o Projeto
+## 1. 🎯 Sobre o Projeto
 
-O **`cloud-so-app`** é uma aplicação web desenvolvida em JavaScript/Node.js com o framework **Express.js**, com a finalidade de coletar, analisar e monitorar métricas em tempo real do Sistema Operacional e do Hardware do ambiente onde está sendo executada (máquina local ou instâncias de contêineres em nuvem).
+O **`cloud-so-app`** é um painel web interativo construído em **Node.js** e **Express.js** que consulta a camada do Kernel do Sistema Operacional via chamadas nativas (`os` module) para expor relatórios em tempo real de hardware, uso de memória e tempo de atividade do sistema.
 
-O projeto atua como estudo prático sobre o funcionamento de **Sistemas Operacionais**, demonstrando conceitos fundamentais como chamadas de sistema (*sys calls*), gerenciamento de processos (PCB/TCB), alocação de memória física/virtual, escalonamento de CPU e virtualização/conteinerização sob modelos **PaaS (Plataforma como Serviço)**.
-
----
-
-## 2. Funcionalidades
-
-- **Coleta de Métricas de Hardware e SO em Tempo Real:**
-  - Identificação de **Hostname** e identificadores de contêiner.
-  - Identificação da **Plataforma (SO)**, do **Kernel** e da **Arquitetura** (`x64`).
-  - Mapeamento detalhado dos **Núcleos e Modelo da CPU**.
-  - Monitoramento de **Memória RAM Total** e **Memória RAM Livre** (com conversão para GB).
-  - Cálculo do **Tempo de Atividade (Uptime)** do sistema em horas ou dias.
-- **Interface Web Responsiva:**
-  - Painel visual estilizado renderizado no lado do servidor.
-- **Suporte Multi-Ambiente:**
-  - Compatibilidade com Windows (ambiente local) e Linux (contêineres Docker/LXC na nuvem).
+> [!NOTE]  
+> **Objetivo Acadêmico:** Demonstrar na prática a abstração fornecida por **Sistemas Operacionais**, **Virtualização** e **Contêineres** ao comparar os recursos expostos em uma máquina física local (Windows 11) e em ambientes de nuvem multicore (Linux AWS no Render e Linux Docker no Railway).
 
 ---
 
-## 3. Tecnologias Utilizadas
+## 2. ✨ Funcionalidades Principais
 
-- **Linguagem & Runtime:** Node.js (v24.x LTS)
-- **Framework Web:** Express.js
-- **Módulos Nativos:** `os` (Interface direta com o SO)
-- **Controle de Versão:** Git e GitHub
-- **Hospedagem / Cloud PaaS:** Render e Railway
-- **Virtualização & Contêineres:** Docker / LXC
+| Ícone | Funcionalidade | Descrição Técnica |
+| :---: | :--- | :--- |
+| 🏷️ | **Identificação do Host** | Captura do `hostname` físico ou do ID dinâmico do contêiner. |
+| 🐧 | **Detecção de Plataforma** | Identificação do SO (`win32` vs `linux`), Kernel e arquitetura (`x64`). |
+| ⚡ | **Mapeamento de CPU** | Contagem de núcleos virtuais e identificação do modelo do processador. |
+| 🧠 | **Monitoramento de RAM** | Cálculo de memória total e livre em Gigabytes: $\text{RAM}_{\text{GB}} = \frac{\text{bytes}}{1024^3}$. |
+| ⏱️ | **Uptime do Sistema** | Medição contínua do tempo de atividade acumulado pelo Kernel. |
+| 📱 | **Interface Web Responsiva** | Dashboard estilizado renderizado diretamente no servidor (SSR). |
 
 ---
 
-## 4. Estrutura do Projeto
+## 3. 🛠️ Tecnologias & Módulos Nativos
 
-```text
-cloud-so-app/
-├── node_modules/        # Dependências do projeto (Express)
-├── .gitignore          # Regras para ignorar arquivos não versionados (node_modules)
-├── package.json        # Manifesto do projeto e dependências Node.js
-├── package-lock.json   # Mapeamento exato de versões
-├── server.js           # Ponto de entrada principal e lógica da aplicação
-├── MANUAL.md           # Manual de desenvolvimento e conceitos de SO
-├── Relatório_Atividade_07.md  # Relatório de implantação em provedores PaaS
-├── README.md           # Documentação geral do repositório
-├── metrica_jaque.jpg   # Captura da execução local (Windows)
-├── metrica_render.jpg  # Captura de métricas no Render
-├── tela_render.jpg     # Painel de controle do Render
-├── tela_projeto_railway.png   # Configuração do projeto no Railway
-└── Captura de tela 2026-10-06 _railway.png  # Configurações de rede do Railway
+<div align="center">
+
+| Tecnologia | Função no Ecossistema |
+| :--- | :--- |
+| **Node.js (v24.x)** | Ambiente de execução JavaScript do lado do servidor |
+| **Express.js** | Framework HTTP para roteamento e servimento de HTML |
+| **Node.js `os` Module** | Módulo nativo para chamadas diretas ao Kernel do SO |
+| **Git / GitHub** | Versionamento de código e integração contínua (CI/CD) |
+| **Render & Railway** | Provedores PaaS de nuvem para conteinerização automatizada |
+| **Docker / LXC** | Tecnologia de isolamento de processos e virtualização leve |
+
+</div>
+
+---
+
+## 4. 🏗️ Arquitetura & Fluxo de Chamadas (System Calls)
+
+Abaixo é representado o fluxo de interrupções e chamadas de sistema (*System Calls*) desde a requisição HTTP do usuário no espaço de usuário (*User Space*) até o acesso direto aos dados mantidos no *Kernel Space*:
+
+```mermaid
+sequenceDiagram
+    autonumber
+    actor Cliente as 👤 Navegador Web
+    participant App as 🟢 Express Server (User Space)
+    participant NodeOS as 📦 Node.js 'os' Module
+    participant Kernel as ⚙️ Kernel do SO (Kernel Space)
+    participant Hardware as 💻 CPU / Memória / Registradores
+
+    Cliente->>App: GET / (Requisição HTTP)
+    App->>NodeOS: Invoca os.freemem(), os.cpus(), os.uptime()
+    NodeOS->>Kernel: Executa System Calls (sys_info / syscall)
+    Kernel->>Hardware: Leitura de Registradores & Tabela de Memória
+    Hardware-->>Kernel: Retorna dados brutos de hardware
+    Kernel-->>NodeOS: Retorna estruturas de dados do Kernel
+    NodeOS-->>App: Retorna objetos JS formatados
+    App-->>Cliente: Resposta HTTP com HTML estilizado do Dashboard
 ```
 
 ---
 
-## 5. Como Executar Localmente
+## 5. 📂 Estrutura de Arquivos
 
-### Pré-requisitos
-- **Node.js** (v18.x ou superior) instalado (`node -v`).
-- **Git** instalado (`git --version`).
-
-### Passo a Passo
-
-1. **Clonar o repositório:**
-   ```bash
-   git clone https://github.com/jaquellinef/cloud-so-app.git
-   cd cloud-so-app
-   ```
-
-2. **Instalar as dependências:**
-   ```bash
-   npm install
-   ```
-
-3. **Iniciar a aplicação:**
-   ```bash
-   node server.js
-   ```
-
-4. **Acessar no navegador:**
-   Abra o endereço `http://localhost:3000` para visualizar o painel com as métricas da sua máquina local.
+```text
+cloud-so-app/
+├── 📁 node_modules/         # Dependências instaladas (Express)
+├── 📄 .gitignore           # Arquivos ignorados no versionamento Git
+├── 📄 package.json         # Manifesto e scripts da aplicação Node.js
+├── 📄 package-lock.json    # Lockfile de versões exatas das dependências
+├── ⚡ server.js            # Ponto de entrada e servidor Express
+├── 📖 MANUAL.md            # Manual completo de desenvolvimento e conceitos
+├── 📊 Relatório_Atividade_07.md # Relatório descritivo de implantação em PaaS
+├── 📝 README.md            # Documentação principal do repositório
+├── 🖼️ metrica_jaque.jpg    # Evidência da execução local (Windows)
+├── 🖼️ metrica_render.jpg   # Evidência das métricas na nuvem Render
+├── 🖼️ tela_render.jpg      # Painel administrativo do Render
+├── 🖼️ tela_projeto_railway.png # Painel de serviços do Railway
+└── 🖼️ Captura..._railway.png  # Configurações de domínio e rede Railway
+```
 
 ---
 
-## 6. Implantação e Hospedagem na Nuvem (PaaS)
+## 6. 🚀 Como Executar Localmente
 
-A aplicação foi implantada e testada em dois provedores de Plataforma como Serviço (**PaaS**): **Render** e **Railway**.
+> [!TIP]
+> **Pré-requisitos:** Certifique-se de possuir o **Node.js** (v18+) e o **Git** instalados na sua máquina.
 
-### 6.1. Render
+```bash
+# 1. Clone o repositório para sua máquina local
+git clone https://github.com/jaquellinef/cloud-so-app.git
 
-- **URL Pública:** `https://cloud-so-app-jaque.onrender.com` / `https://cloud-so-app-6elo.onrender.com`
-- **Configuração:**
-  - **Runtime:** Node
-  - **Build Command:** `npm install`
-  - **Start Command:** `node server.js`
-  - **Plataforma:** Linux (`x64`), Kernel `aws`
-- **Comportamento:** A aplicação executa isolada dentro de um contêiner Linux, reportando especificações do nó hospedeiro do cluster do provedor.
+# 2. Acesse a pasta do projeto
+cd cloud-so-app
 
-### 6.2. Railway
+# 3. Instale as dependências do Express
+npm install
 
-- **URL Pública:** `sistemas-operacionais-production.up.railway.app`
-- **Configuração:**
-  - **Conexão:** Repositório do GitHub (`jaquellinef/sistemas-operacionais`)
-  - **Diretório Raiz:** `/cloud-so-app`
-  - **Porta do Contêiner:** `8080` (atribuída dinamicamente)
-  - **Isolamento:** Contêiner Docker / LXC Linux
-- **Desempenho:** Instância vinculada a host multicore de alto desempenho (48 vCPUs e mais de 300 GB de RAM compartilhada).
+# 4. Inicie o servidor Node.js
+node server.js
+```
+
+Após iniciar, acesse no seu navegador: `http://localhost:3000` 🌐
 
 ---
 
-## 7. Análise Comparativa de Ambientes
+## 7. ☁️ Implantação nas Plataformas PaaS
 
-A tabela abaixo compila os dados coletados diretamente em execução nos três ambientes de teste:
+O projeto está implantado em múltiplos provedores de nuvem para comparar o comportamento da virtualização:
 
-| Métrica / Parâmetro | Execução Local (Máquina Física) | Nuvem — Render (PaaS) | Nuvem — Railway (PaaS) |
-| :--- | :--- | :--- | :--- |
-| **Ambiente** | Windows 11 (Físico) | Linux (Contêiner AWS) | Linux (Contêiner LXC/Docker) |
-| **Hostname** | `Jaquelline` | `srv-daug...` / `srv-db2...` | `5f456ede1912` |
-| **Plataforma (SO)** | `win32` | `linux` | `linux` |
+```mermaid
+graph TD
+    subgraph LOCAL["💻 Ambiente Local (Físico)"]
+        W11["🪟 Windows 11 Home/Pro x64"]
+        CPU1["12 Cores Intel i5-1235U"]
+        RAM1["7.73 GB RAM Total"]
+        APP1["Node.js (Porta 3000)"]
+        W11 --> CPU1 & RAM1 --> APP1
+    end
+
+    subgraph RENDER["☁️ Render Cloud (PaaS)"]
+        L1["🐧 Linux Server (AWS Kernel)"]
+        CONT1["📦 Contêiner Isolado (LXC)"]
+        CPU2["8 Cores AMD EPYC 7R13"]
+        RAM2["30.65 GB RAM Total"]
+        APP2["Node.js App (URL Pública)"]
+        L1 --> CONT1 --> CPU2 & RAM2 --> APP2
+    end
+
+    subgraph RAILWAY["🚂 Railway Cloud (PaaS)"]
+        L2["🐧 Linux Server (Host Docker)"]
+        CONT2["📦 Contêiner Docker"]
+        CPU3["48 Cores AMD EPYC 9655"]
+        RAM3["322.69 GB RAM Total"]
+        APP3["Node.js App (Porta 8080)"]
+        L2 --> CONT2 --> CPU3 & RAM3 --> APP3
+    end
+```
+
+---
+
+## 8. 📊 Análise Comparativa dos Ambientes
+
+A tabela abaixo resume os dados coletados ao vivo em cada ambiente de execução:
+
+| Parâmetro / Métrica | 💻 Execução Local | ☁️ Render (Cloud PaaS) | 🚂 Railway (Cloud PaaS) |
+| :--- | :---: | :---: | :---: |
+| **Status do Serviço** | 🟢 Ativo (Local) | 🟢 Online (PaaS) | 🟢 Online (PaaS) |
+| **Sistema Operacional** | `win32` (Windows 11) | `linux` (Linux AWS) | `linux` (Linux Docker) |
 | **Arquitetura** | `x64` | `x64` | `x64` |
-| **Processador (CPU)** | 12x Intel(R) Core(TM) i5-1235U | 8x AMD EPYC 7R13 Processor | 48x AMD EPYC 9655 96-Core |
-| **Memória RAM Total** | `7.73 GB` | `30.65 GB` | `322.69 GB` |
-| **Memória RAM Livre** | `0.75 GB` | `8.53 GB` a `11.86 GB` | `89.33 GB` |
-| **Uptime (Atividade)**| ~7 dias (173h) | ~159 dias (3816h) | ~151 dias (3630h) |
+| **Hostname** | `Jaquelline` | `srv-daug...` / `srv-db2...` | `5f456ede1912` |
+| **Modelo da CPU** | Intel Core i5-1235U | AMD EPYC 7R13 Processor | AMD EPYC 9655 96-Core |
+| **Núcleos (vCPUs)** | 12 Núcleos | 8 vCPUs | **48 vCPUs** |
+| **Memória RAM Total** | `7.73 GB` | `30.65 GB` | **`322.69 GB`** |
+| **Memória RAM Livre** | `0.75 GB` (~10%) | `8.53 GB` a `11.86 GB` | `89.33 GB` |
+| **Tempo de Atividade** | ~7 dias (173h) | **~159 dias (3816h)** | **~151 dias (3630h)** |
 
 ---
 
-## 8. Conceitos de Sistemas Operacionais Aplicados
+## 9. 🎓 Conceitos Teóricos de Sistemas Operacionais
 
-1. **Processos e Bloco de Controle de Processo (PCB):**  
-   Quando o comando `node server.js` é executado, o SO cria um novo processo, atribui um **PID (Process ID)** único e aloca uma estrutura **PCB/TCB** no Kernel para gerenciar estado, registradores e ponteiros de memória do runtime Node.js.
+O desenvolvimento e implantação do `cloud-so-app` permitiram aplicar na prática os **5 pilares de Sistemas Operacionais**:
 
-2. **Chamadas de Sistema (*System Calls*):**  
-   Métodos nativos como `os.freemem()`, `os.totalmem()`, `os.cpus()` e `os.uptime()` realizam chamadas de sistema (*sys calls*) ao Kernel do SO hospedeiro para ler as estruturas da tabela de processos e da memória física.
+```mermaid
+mindmap
+  root((Sistemas Operacionais))
+    Processos e PCB
+      PID Único
+      TCB / Threads
+      Estado do Processo
+    System Calls
+      Módulo 'os' Nativo
+      Modo Kernel vs Usuario
+      Interrupções de Hardware
+    Gerenciamento de Memória
+      Stack e Heap
+      V8 Garbage Collection
+      Paging e Memoria Virtual
+    Escalonador de CPU
+      Time-Sharing
+      Multi-Core Task Switching
+      Scheduler do Kernel
+    Virtualização e Nuvem
+      Contêineres LXC / Docker
+      Isolamento de Hostname
+      Abstração de Hardware
+```
 
-3. **Gerenciamento de Memória e Coleta de Lixo (V8 GC):**  
-   A aplicação utiliza a Engine V8 do Node.js, que gerencia a memória em *Heap* e *Stack*, acionando o *Garbage Collector* periodicamente no espaço de usuário (*User Space*).
+> [!IMPORTANT]
+> 1. **Bloco de Controle de Processo (PCB/TCB):** O Node.js executa como um processo no *User Space* identificado por um PID único. O Kernel do SO associa a ele um PCB para controlar registradores, contexto e consumo de memória.
+> 2. **Chamadas de Sistema (*System Calls*):** Funções como `os.freemem()` acionam interrupções de software que alternam a execução do modo usuário para o modo Kernel para ler a tabela de memória do SO.
+> 3. **Gerenciamento de Memória & V8 GC:** No runtime Node.js, a Engine V8 administra dynamic memory (*Heap*) acionando o *Garbage Collector* periodicamente.
+> 4. **Escalonamento de CPU (*Scheduler*):** O escalonador do SO distribui os threads da aplicação entre os núcleos físicos/virtuais (12 núcleos locais vs 48 núcleos na nuvem).
+> 5. **Virtualização & Conteinerização:** Nos ambientes Render e Railway, a aplicação é isolada dentro de contêineres. O *hostname* exposto é o ID do contêiner e o hardware reportado pertence ao nó do cluster do provedor de nuvem.
 
-4. **Escalonamento de Processos (Scheduler):**  
-   O escalonador do Kernel (seja no Windows ou no Linux) alterna a execução dos threads do Node.js/V8 entre os núcleos de CPU disponíveis (Intel i5 no ambiente local e AMD EPYC na nuvem).
+---
 
-5. **Virtualização e Conteinerização:**  
-   Em ambientes PaaS (Render e Railway), a aplicação roda de forma isolada através de contêineres. O *hostname* reportado é a ID do contêiner, e os recursos de CPU/RAM expostos pelo módulo `os` refletem o nó físico da infraestrutura de nuvem, demonstrando a abstração fornecida pela virtualização.
+## 10. 🔧 Solução de Problemas & Troubleshooting
+
+<details>
+<summary><b>1. Erro de Extensão de Arquivo (<code>MODULE_NOT_FOUND</code>)</b></summary>
+
+* **Sintoma:** Ao rodar `node server.js`, o Node informava que não encontrava o arquivo.
+* **Causa:** O Windows ocultava extensões e salvou o arquivo como `server.js.txt`.
+* **Solução:** Ativação da exibição de extensões no Explorer e renomeação direta para `server.js`.
+</details>
+
+<details>
+<summary><b>2. Erro de Envio Git (<code>GH007: Private Email Address</code>)</b></summary>
+
+* **Sintoma:** O comando `git push` falhava ao enviar commits para o GitHub.
+* **Causa:** Bloqueio ativado na conta do GitHub para ocultar endereço de e-mail pessoal.
+* **Solução:** Ajuste nas configurações de e-mail do GitHub (`settings/emails`) autorizando o envio seguro.
+</details>
 
 ---
 
-## 9. Solução de Problemas Enfrentados
+## 11. 👩‍💻 Autora
 
-- **Erro de Extensão de Arquivo (`MODULE_NOT_FOUND`):**  
-  *Sintoma:* O Node.js não encontrou o arquivo de inicialização local.  
-  *Causa:* O sistema Windows salvou o arquivo como `server.js.txt`.  
-  *Solução:* Renomeação direta do arquivo para `server.js` na raiz do projeto.
+<div align="center">
 
-- **Bloqueio de E-mail Privado no GitHub (`GH007`):**  
-  *Sintoma:* O comando `git push` falhou devido às regras de e-mail privado do GitHub.  
-  *Solução:* Ajuste nas configurações de e-mail da conta no GitHub (`settings/emails`), desativando o bloqueio de envios por linha de comando.
+| Desenvolvedora | Repositório | Status do Projeto |
+| :---: | :---: | :---: |
+| **Jaquelline** ([@jaquellinef](https://github.com/jaquellinef)) | [`cloud-so-app`](https://github.com/jaquellinef/cloud-so-app) | 🟢 Concluído & Publicado |
 
 ---
 
-## 10. Autora
+*Desenvolvido como projeto prático de Sistemas Operacionais.*  
+*Se este repositório foi útil para você, deixe uma ⭐!*
 
-Desenvolvido por **Jaquelline**  
-- **GitHub:** [@jaquellinef](https://github.com/jaquellinef)  
-- **Projeto:** `cloud-so-app`  
-
----
+</div>
